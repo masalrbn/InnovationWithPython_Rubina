@@ -1,0 +1,313 @@
+1. Write a program to reverse a string.
+Sample input: “1234abcd”
+Expected output: “dcba4321”
+
+inp = "1234abcd"
+rev = inp[::-1]
+print(rev)
+
+Output:
+
+dcba4321
+
+----------------------------------------------------------------------------------------------------------------------
+
+2.  Write a function that accepts a string and prints the number of uppercase letters and lowercase
+letters.
+Sample input: “abcSdefPghijQkl”
+Expected Output: No. of Uppercase characters : 3 No. of Lower case Characters : 12
+
+a = eval(input("Enter a string with Upper and Lower cases: "))
+def str(a):
+    upper_case, lower_case = 0,0
+    for i in a:
+        if i.isupper():
+            upper_case += 1
+
+        elif i.islower():
+            lower_case += 1
+        else:
+            print("pass")
+
+    print("Total Upper case letters are: ", upper_case)
+    print("Total lower case letters are: ", lower_case)
+
+str(a)
+
+Output:
+
+Enter a string with Upper and Lower cases: "RubinaMasal"
+Total Upper case letters are:  2
+Total lower case letters are:  9
+
+----------------------------------------------------------------------------------------------------------------------
+
+3. Create a function that takes a list and returns a new list with unique elements of the first list.
+
+def sort_list(l):
+    unique_list = []
+    for i in l:
+        if i not in unique_list:
+            unique_list.append(i)
+    return unique_list
+
+
+print(sort_list(l=[2, 4, 5, 3, 2, 6, 3, 5, 6, 8, 23, 2, 3]))
+
+Output:
+
+[2, 4, 5, 3, 6, 8, 23]
+
+----------------------------------------------------------------------------------------------------------------------
+4. Write a program that accepts a hyphen-separated sequence of words as input and prints the words
+in a hyphen-separated sequence after sorting them alphabetically.
+
+inp = eval(input("Enter a hyphen separated sequence of words:"))
+sorted_lst = [i for i in inp.split('-')]
+sorted_lst.sort()
+print("Sorted list:", '-'.join(sorted_lst))
+
+Output:
+
+Enter a hyphen separated sequence of words:"white-orange-green-red-blue-black-violet"
+Sorted list: black-blue-green-orange-red-violet-white
+
+----------------------------------------------------------------------------------------------------------------------
+5. Write a program that accepts a sequence of lines as input and prints the lines after making allcharacters in the 
+sentence capitalized.
+
+print("Enter something (4 lines): ")
+lines = []
+for i in range(1,5):
+    l = input()
+    if l:
+        lines.append(l.upper())
+    else:
+        break
+
+for l in lines:
+    print(l)
+	
+Output:
+
+Enter something (4 lines): 
+hi
+how are you
+where do you live?
+what are you studying?
+HI
+HOW ARE YOU
+WHERE DO YOU LIVE?
+WHAT ARE YOU STUDYING?
+----------------------------------------------------------------------------------------------------------------------
+
+6. Define a function that can receive two integral numbers in string form and compute their sum andprint it in the console.
+
+a = input("Enter an integer: ")
+b = input("Enter another integer: ")
+
+
+def sum_func(a, b):
+    sum = int(a) + int(b)
+    return sum
+
+
+print(sum_func(a, b))
+
+Output:
+
+Enter an integer: 2
+Enter another integer: 3
+5
+
+----------------------------------------------------------------------------------------------------------------------
+
+7. Define a function that can accept two strings as input and print the string with the maximum lengthin the console. 
+If two strings have the same length, then the function should print both the strings lineby line.
+
+str1 = input("Enter something: ")
+str2 = input("Enter something again: ")
+
+def max_length(str1, str2):
+    if len(str1) > len(str2):
+        print(len(str1))
+    elif len(str2) > len(str1):
+        print(len(str2))
+    else:
+        print(str1,str2,sep='\n')
+
+max_length(str1, str2)
+
+Output:
+#2nd input with maximum length
+Enter something: My name is Rubina
+Enter something again: I am learning Python
+20
+
+#both inputs same length
+Enter something: Hello
+Enter something again: World
+Hello
+World
+
+----------------------------------------------------------------------------------------------------------------------
+
+8. Define a function which can generate and print a tuple where the values are square of numbersbetween 1 and 20 
+(both 1 and 20 included).
+
+def sq_tuple():
+    l = []
+    for i in range(1,21):
+       l.append(i**2)
+    print(tuple(l))
+    
+sq_tuple()
+
+Output:
+
+(1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400)
+
+----------------------------------------------------------------------------------------------------------------------
+
+9. Write a function called showNumbers that takes a parameter called limit. It should print all thenumbers between 
+0 and limit with a label to identify the even and odd numbers.
+
+def showNumbers(limit):
+    while True:
+        for i in range(0,4):
+            if i % 2 == 0:
+                print(i, "EVEN")
+            else:
+                print(i, "ODD")
+        break
+showNumbers(3)
+
+Output:
+
+0 EVEN
+1 ODD
+2 EVEN
+3 ODD
+
+----------------------------------------------------------------------------------------------------------------------
+
+10. Write a program which uses filter() to make a list whose elements are even numbers between 1and 20 (both included)
+
+even_num_list = list(filter(lambda a: a % 2 == 0, range(1, 21)))
+print(even_num_list)
+
+Output:
+
+[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+----------------------------------------------------------------------------------------------------------------------
+
+11. Write a program which uses map() and filter() to make a list whose elements are squares of evennumbers in 
+[1,2,3,4,5,6,7,8,9,10].Hints: Use filter() to filter even elements of the given listUse map() to generate a list of squares
+of thenumbers in the filteredlist. Use lambda() to define anonymous functions.
+
+f = list(filter(lambda a: a % 2 == 0, range(1, 11)))
+m = list(map(lambda b: b**2, f))
+print(m)
+
+Output:
+
+[4, 16, 36, 64, 100]
+
+----------------------------------------------------------------------------------------------------------------------
+
+12. Write a function to compute 5/0 and use try/except to catch the exceptions
+
+def division(a, b):
+    try:
+        div = a / b
+    except ZeroDivisionError:
+        print("Can't divide by 0, This is ZeroDivision error.")
+
+
+division(5, 0)
+
+Output:
+
+Can't divide by 0, This is ZeroDivision error.
+
+----------------------------------------------------------------------------------------------------------------------
+
+13. Flatten the list[1,2,3,4,5,6,7]into 1234567using reduce().
+
+import functools
+l = [1,2,3,4,5,6,7]
+r = functools.reduce(lambda a,b: str(a)+str(b), l)
+print(r)
+
+Output:
+
+1234567
+
+----------------------------------------------------------------------------------------------------------------------
+
+14. Write a program in Python to find the values which are not divisible by 3 but are a multiple of 7.Make sure to 
+use only higher order functions.
+
+not_divisible = list(filter(lambda a: a % 3 != 0, range(1, 100)))
+divisible = list(filter(lambda b: b % 7 == 0, not_divisible))
+print(divisible)
+
+Output:
+
+[7, 14, 28, 35, 49, 56, 70, 77, 91, 98]
+
+----------------------------------------------------------------------------------------------------------------------
+
+15. Write a program in Python tomultiply the elements of a list by itself using a traditional functionand pass 
+the function to map() to complete the operation.
+
+l = [5, 3, 2, 12, 25, 1, 16]
+
+
+def sq(i):
+    result = i * i
+    return result
+
+
+new_list = list(map(sq, l))
+print(new_list)
+
+Output:
+
+[25, 9, 4, 144, 625, 1, 256]
+
+----------------------------------------------------------------------------------------------------------------------
+
+16. What is the output of the following codes:
+(i) def foo():
+		try:
+			return 1
+		finally:
+			return 2
+    k = foo()
+    print(k)
+		
+Output:
+2
+
+---------------------------
+
+ii) def a():
+		try:
+			f(x,4)
+		finally:
+			print('after f')
+			print('after f?')
+        a()
+
+Output:
+
+after f
+after f?
+Traceback (most recent call last):
+  File "C:\Users\rajesh\PycharmProjects\pythonProject1\demo.py", line 7, in <module>
+    a()
+  File "C:\Users\rajesh\PycharmProjects\pythonProject1\demo.py", line 3, in a
+    f(x, 4)
+NameError: name 'f' is not defined
